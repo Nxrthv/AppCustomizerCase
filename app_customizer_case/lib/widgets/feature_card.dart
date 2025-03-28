@@ -3,14 +3,14 @@
 class FeatureCard extends StatelessWidget {
   final String title;
   final String description;
-  final IconData icon;
+  final String imagePath;
   final VoidCallback onTap;
 
   const FeatureCard({
     super.key,
     required this.title,
     required this.description,
-    required this.icon,
+    required this.imagePath,
     required this.onTap,
   });
 
@@ -25,10 +25,10 @@ class FeatureCard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                icon,
-                size: 48,
-                color: Theme.of(context).colorScheme.primary,
+              Image.asset(
+                imagePath,
+                height: 100,
+                fit: BoxFit.contain,
               ),
               const SizedBox(height: 16),
               Text(

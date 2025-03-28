@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_customizer_case/screens/home_screen.dart';
-import 'package:app_customizer_case/theme/app_theme.dart';
+import 'package:app_customizer_case/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Phone Case Customizer',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
-      home: const HomeScreen(),
+      title: 'Cuwustom - ¡Personliza lo que quieras!',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: const MainScreen(),
     );
   }
 }

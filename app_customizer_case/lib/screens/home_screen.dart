@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Phone Case Customizer'),
+        title: const Text('Customizer App'),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -20,14 +20,14 @@ class HomeScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 16),
               Text(
-                'Design Your Perfect Case',
+                'Personaliza tus productos',
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
               ),
               const SizedBox(height: 8),
               Text(
-                'Create a unique phone case with your favorite images',
+                'Crea diseños únicos con tus imágenes favoritas',
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               const SizedBox(height: 32),
@@ -38,9 +38,9 @@ class HomeScreen extends StatelessWidget {
                   crossAxisSpacing: 16,
                   children: [
                     FeatureCard(
-                      title: 'Select Case',
-                      description: 'Choose from various case models',
-                      icon: Icons.phone_android,
+                      title: 'Fundas de Celular',
+                      description: 'Personaliza tu funda con tus fotos',
+                      imagePath: 'assets/images/fundas.webp',
                       onTap: () {
                         Navigator.push(
                           context,
@@ -51,27 +51,43 @@ class HomeScreen extends StatelessWidget {
                       },
                     ),
                     FeatureCard(
-                      title: 'Recent Designs',
-                      description: 'View your saved designs',
-                      icon: Icons.history,
+                      title: 'Cuadros Spotify',
+                      description: 'Tu canción favorita en un cuadro',
+                      imagePath: 'assets/images/cuadros_spotify.jpg',
                       onTap: () {
-                        // Navigate to recent designs
+                        // Navigate to Spotify frame customization
                       },
                     ),
                     FeatureCard(
-                      title: 'Gallery',
-                      description: 'Browse community designs',
-                      icon: Icons.collections,
+                      title: 'Camisetas',
+                      description: 'Diseña tu propia camiseta',
+                      imagePath: 'assets/images/camisetas.webp',
                       onTap: () {
-                        // Navigate to gallery
+                        // Navigate to t-shirt customization
                       },
                     ),
                     FeatureCard(
-                      title: 'Settings',
-                      description: 'Customize app preferences',
-                      icon: Icons.settings,
+                      title: 'Tazas',
+                      description: 'Tazas personalizadas con tus fotos',
+                      imagePath: 'assets/images/tazas.webp',
                       onTap: () {
-                        // Navigate to settings
+                        // Navigate to mug customization
+                      },
+                    ),
+                    FeatureCard(
+                      title: 'Llaveros',
+                      description: 'Llaveros con diseños únicos',
+                      imagePath: 'assets/images/llaveros.jpg',
+                      onTap: () {
+                        // Navigate to keychain customization
+                      },
+                    ),
+                    FeatureCard(
+                      title: 'Almohadas',
+                      description: 'Almohadas con tus fotos favoritas',
+                      imagePath: 'assets/images/almohadas.webp',
+                      onTap: () {
+                        // Navigate to pillow customization
                       },
                     ),
                   ],

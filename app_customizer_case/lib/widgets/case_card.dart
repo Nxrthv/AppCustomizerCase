@@ -14,6 +14,10 @@ class CaseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
@@ -25,14 +29,18 @@ class CaseCard extends StatelessWidget {
                 borderRadius: const BorderRadius.vertical(
                   top: Radius.circular(12),
                 ),
-                child: Container(
+                child: Image.asset(
+                  caseModel.imagePath,
                   width: double.infinity,
-                  color: Colors.grey[200],
-                  child: Center(
-                    child: Icon(
-                      Icons.phone_iphone,
-                      size: 80,
-                      color: Theme.of(context).colorScheme.primary,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) => Container(
+                    color: Colors.grey[200],
+                    child: const Center(
+                      child: Icon(
+                        Icons.broken_image,
+                        size: 100,
+                        color: Colors.grey,
+                      ),
                     ),
                   ),
                 ),

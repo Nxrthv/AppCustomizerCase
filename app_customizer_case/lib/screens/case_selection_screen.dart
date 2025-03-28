@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app_customizer_case/models/case_model.dart';
-import 'package:app_customizer_case/screens/customization_screen.dart';
+import 'package:app_customizer_case/screens/customization_phone_screen.dart';
 import 'package:app_customizer_case/widgets/case_card.dart';
 
 class CaseSelectionScreen extends StatelessWidget {
@@ -11,40 +11,29 @@ class CaseSelectionScreen extends StatelessWidget {
     // Sample case models
     final List<CaseModel> caseModels = [
       CaseModel(
-        id: '1',
         name: 'iPhone 14 Pro',
-        imageUrl: 'assets/cases/iphone_14_pro.png',
+        imagePath: 'assets/models/iphone-14-pro.png',
         description: 'Slim case for iPhone 14 Pro',
       ),
       CaseModel(
-        id: '2',
         name: 'iPhone 13',
-        imageUrl: 'assets/cases/iphone_13.png',
+        imagePath: 'assets/models/iphone-13.webp',
         description: 'Durable case for iPhone 13',
       ),
       CaseModel(
-        id: '3',
         name: 'Samsung Galaxy S23 Ultra',
-        imageUrl: 'assets/cases/samsung-s23-ultra.png',
+        imagePath: 'assets/models/samsung-s23-ultra.webp',
         description: 'Premium case for Samsung Galaxy S23',
       ),
       CaseModel(
-        id: '4',
         name: 'Google Pixel 7',
-        imageUrl: 'assets/cases/pixel_7.png',
+        imagePath: 'assets/models/google-pixel-7.webp',
         description: 'Protective case for Google Pixel 7',
       ),
       CaseModel(
-        id: '5',
         name: 'Samsung Galaxy S22 Ultra',
-        imageUrl: 'assets/cases/samsung_s22_ultra.png',
+        imagePath: 'assets/models/samsung-s22-ultra.webp',
         description: 'Ultra-protective case for S22 Ultra',
-      ),
-      CaseModel(
-        id: '6',
-        name: 'iPhone 14',
-        imageUrl: 'assets/cases/iphone_14.png',
-        description: 'Stylish case for iPhone 14',
       ),
     ];
 
