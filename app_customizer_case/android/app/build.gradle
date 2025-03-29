@@ -29,8 +29,8 @@ android {
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     defaultConfig {
@@ -58,11 +58,9 @@ flutter {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.8.0'  // Dependencia esencial de AndroidX
-    implementation 'androidx.appcompat:appcompat:1.4.0'  // AppCompat para compatibilidad hacia atrás
-    implementation 'com.google.android.material:material:1.4.0'  // Material Components para Android
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'  // Dependencia de ciclo de vida
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'  // Retrofit para consumo de APIs (si lo usas)
-    implementation 'com.squareup.okhttp3:okhttp:4.9.1'  // OkHttp (si usas Retrofit)
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.21'  // Kotlin estándar (puede ser necesario dependiendo de tu configuración)
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.0"
 }
