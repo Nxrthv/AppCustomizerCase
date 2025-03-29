@@ -12,6 +12,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 255, 255, 255),
+          background: Colors.white,
+        ),
+      ),
       title: 'Cuwustom - ¡Personliza lo que quieras!',
       home: const MainScreen(),
     );

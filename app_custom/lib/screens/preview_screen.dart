@@ -169,12 +169,16 @@ class _PreviewScreenState extends State<PreviewScreen> {
                           else
                             Container(color: Colors.grey[300]),
 
-                          // Plantilla PNG por encima
                           IgnorePointer(
-                            child: Image.asset(
-                              widget.caseModel.imageCase,
-                              fit: BoxFit.cover,
-                            ),
+                            child: widget.caseModel.imageCase.startsWith('/data/')
+                                ? Image.file(
+                                    File(widget.caseModel.imageCase),
+                                    fit: BoxFit.cover,
+                                  )
+                                : Image.asset(
+                                    widget.caseModel.imageCase,
+                                    fit: BoxFit.cover,
+                                  ),
                           ),
                         ],
                       ),

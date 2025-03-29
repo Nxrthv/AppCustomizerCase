@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:app_custom/models/case_model.dart';
 import 'package:app_custom/screens/customization_phone_screen.dart';
 import 'package:app_custom/widgets/case_card.dart';
+import 'package:app_custom/models/case_repository.dart';
 
 class CaseSelectionScreen extends StatelessWidget {
   const CaseSelectionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    //Cards de modelos
-    final List<CaseModel> caseModels = [
+    // Modelos predeterminados
+    final List<CaseModel> defaultCases = [
       CaseModel(
         name: 'iPhone 14 Pro Max',
         imagePath: 'assets/models/iphone-14-pro.png',
@@ -32,6 +33,9 @@ class CaseSelectionScreen extends StatelessWidget {
         price: 20.00,
       ),
     ];
+
+    // 👇 Combinar con modelos del admin
+    final List<CaseModel> caseModels = [...defaultCases, ...CaseRepository.cases];
 
     return Scaffold(
       appBar: AppBar(

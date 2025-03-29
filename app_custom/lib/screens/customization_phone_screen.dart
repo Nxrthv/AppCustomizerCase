@@ -110,12 +110,16 @@ class _CustomizationScreenState extends State<CustomizationScreen> {
                       else
                         Container(color: Colors.grey[300]),
 
-                      // Plantilla del modelo
                       IgnorePointer(
-                        child: Image.asset(
-                          widget.caseModel.imageCase,
-                          fit: BoxFit.cover,
-                        ),
+                        child: widget.caseModel.imageCase.startsWith('/data/')
+                            ? Image.file(
+                                File(widget.caseModel.imageCase),
+                                fit: BoxFit.cover,
+                              )
+                            : Image.asset(
+                                widget.caseModel.imageCase,
+                                fit: BoxFit.cover,
+                              ),
                       ),
                     ],
                   ),

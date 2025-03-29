@@ -1,3 +1,4 @@
+import 'package:app_custom/models/case_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:app_custom/models/case_model.dart';
 import 'package:image_picker/image_picker.dart';
@@ -57,6 +58,7 @@ class _AdminPanelState extends State<AdminPanel> {
 
     setState(() {
       _addedCases.add(newCase);
+      CaseRepository.addCase(newCase);
       _name.clear();
       _desc.clear();
       _price.clear();

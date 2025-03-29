@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:app_custom/models/case_model.dart';
 
@@ -29,23 +31,21 @@ class CaseCard extends StatelessWidget {
                 borderRadius: const BorderRadius.vertical(
                   top: Radius.circular(12),
                 ),
-                child: Image.asset(
-                  caseModel.imagePath,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) => Container(
-                    color: Colors.grey[200],
-                    child: const Center(
-                      child: Icon(
-                        Icons.broken_image,
-                        size: 100,
-                        color: Colors.grey,
-                      ),
+                child: caseModel.imagePath.startsWith('/data/')
+                  ? Image.file(
+                      File(caseModel.imagePath),
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => _errorPlaceholder(),
+                    )
+                  : Image.asset(
+                      caseModel.imagePath,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => _errorPlaceholder(),
                     ),
-                  ),
-                ),
               ),
-            ),
+              ),
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Column(
@@ -81,4 +81,17 @@ class CaseCard extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _errorPlaceholder() {
+  return Container(
+    color: Colors.grey[200],
+    child: const Center(
+      child: Icon(
+        Icons.broken_image,
+        size: 100,
+        color: Colors.grey,
+      ),
+    ),
+  );
 }
